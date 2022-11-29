@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "simple-crm-fcaad": {
+      "hosting": {
+        "simple-crm": [
+          "simple-crm-fcaad"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "simple-crm-fcaad"
+  }
+}
