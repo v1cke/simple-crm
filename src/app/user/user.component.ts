@@ -20,10 +20,10 @@ export class UserComponent implements OnInit {
   constructor(
     public dialog: MatDialog,
     private firestore: Firestore) {
-    this.loadFirestore();
   }
 
   ngOnInit(): void {
+    this.loadFirestore();
   }
 
   openDialog() {

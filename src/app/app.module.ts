@@ -27,6 +27,11 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
 import { AngularFireModule } from '@angular/fire/compat';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatCardModule} from '@angular/material/card';
+import { UserDetailComponent } from './user-detail/user-detail.component';
+import {MatMenuModule} from '@angular/material/menu';
+import { DialogEditUserComponent } from './dialog-edit-user/dialog-edit-user.component';
+import { DialogEditAdressComponent } from './dialog-edit-adress/dialog-edit-adress.component';
+import { DialogDeleteUserComponent } from './dialog-delete-user/dialog-delete-user.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +39,10 @@ import {MatCardModule} from '@angular/material/card';
     DashboardComponent,
     UserComponent,
     DialogAddUserComponent,
+    UserDetailComponent,
+    DialogEditUserComponent,
+    DialogEditAdressComponent,
+    DialogDeleteUserComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,6 +62,7 @@ import {MatCardModule} from '@angular/material/card';
     FormsModule,
     AngularFireModule,
     MatCardModule,
+    MatMenuModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideDatabase(() => getDatabase()),

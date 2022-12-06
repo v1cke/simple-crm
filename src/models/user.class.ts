@@ -1,6 +1,9 @@
+import { EmailAuthCredential } from "@angular/fire/auth";
+
 export class User {
     firstName: string;
     secondName: string;
+    mail: string;
     birthDate: number;
     street: string;
     zipCode: number;
@@ -9,6 +12,7 @@ export class User {
     constructor(obj?: any) {
         this.firstName = obj ? obj.firstName : '';
         this.secondName = obj ? obj.secondName : '';
+        this.mail = obj ? obj.mail : '';
         this.birthDate = obj ? obj.birthDate : '';
         this.street = obj ? obj.street : '';
         this.zipCode = obj ? obj.zipCode : '';
@@ -20,6 +24,7 @@ export class User {
         return {
             firstName: this.firstName,
             secondName: this.secondName,
+            mail: this.mail,
             birthDate: this.birthDate,
             street: this.street,
             zipCode: this.zipCode,

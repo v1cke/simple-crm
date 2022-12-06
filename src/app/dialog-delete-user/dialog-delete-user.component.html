@@ -1,0 +1,34 @@
+<div class="dialog-container">
+    <h1 mat-dialog-title>Delete User</h1>
+    <div mat-dialog-content>
+      <mat-form-field class="username-input-field" appearance="outline">
+        <mat-label>First Name</mat-label>
+        <input disable="loading" [(ngModel)]="user.firstName" matInput placeholder="insert name here" disabled>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Second Name</mat-label>
+        <input disable="loading" [(ngModel)]="user.secondName" matInput placeholder="insert name here">
+      </mat-form-field>
+    </div>
+  
+    <div>
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Email</mat-label>
+        <input type="email" disable="loading" [(ngModel)]="user.mail" matInput placeholder="insert email here">
+      </mat-form-field>
+    </div>
+  
+    <div>
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Birthdate</mat-label>
+        <input disable="loading" [(ngModel)]="birthDate" matInput [matDatepicker]="picker1">
+        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1 color="primary"></mat-datepicker>
+      </mat-form-field>
+    </div>
+  
+    <div mat-dialog-actions>
+      <button disable="loading" mat-button mat-dialog-close>Cancel</button>
+      <button disable="loading" (click)="saveUser()" mat-button mat-dialog-close cdkFocusInitial>Save</button>
+    </div>
+  </div>
