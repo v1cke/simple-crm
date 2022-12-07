@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { doc, Firestore } from '@angular/fire/firestore';
 import { MatDialogRef } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { collection, deleteDoc } from '@firebase/firestore';
 import { User } from 'src/models/user.class';
-import { DialogEditUserComponent } from '../dialog-edit-user/dialog-edit-user.component';
 
 @Component({
   selector: 'app-dialog-delete-user',
@@ -17,17 +17,21 @@ export class DialogDeleteUserComponent implements OnInit {
   userId: string;
 
   constructor(public dialogRef: MatDialogRef<DialogDeleteUserComponent>,
-    private firestore: Firestore,) {
+    private firestore: Firestore,
+    public router: Router) {
     this.coll = collection(this.firestore, 'users')
   }
 
   ngOnInit(): void {
   }
 
-  async saveUser() {
-    this.user.birthDate = this.birthDate.getTime();
+  async deleteUser() {
     await deleteDoc(doc(this.coll, this.userId));
     this.dialogRef.close();
-    location.reload();
+    this.router.navigate(['/user']);
+  }
+
+  displayDeleteContainer(){
+    
   }
 }

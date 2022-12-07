@@ -11,7 +11,12 @@
         <input disable="loading" [(ngModel)]="user.secondName" matInput placeholder="insert name here">
       </mat-form-field>
     </div>
-  
+    <div>
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Phone</mat-label>
+        <input type="number" disable="loading" [(ngModel)]="user.phone" matInput placeholder="insert phonenumber here">
+      </mat-form-field>
+    </div>
     <div>
       <mat-form-field class="full-width" appearance="outline">
         <mat-label>Email</mat-label>

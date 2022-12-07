@@ -3,8 +3,6 @@ import { User } from 'src/models/user.class';
 import { collection, setDoc } from '@firebase/firestore';
 import { addDoc, doc, Firestore } from '@angular/fire/firestore';
 import {MatDialogRef} from '@angular/material/dialog';
-import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
-import {ErrorStateMatcher} from '@angular/material/core';
 
 @Component({
   selector: 'app-dialog-add-user',

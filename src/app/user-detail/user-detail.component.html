@@ -7,15 +7,22 @@
             <mat-icon>edit</mat-icon>
             <span>Edit</span>
         </button>
-        <button mat-menu-item>
+        <button mat-menu-item (click)="deleteUser()">
             <mat-icon>delete</mat-icon>
             <span>Delete user</span>
         </button>
     </mat-menu>
     <img src="../../assets/img/profile-1.png">
     <div class="user-details">
-        <h2>{{ user.firstName }} {{ user.secondName }}</h2><br>
-        {{ user.mail }}
+        <h2>
+            <mat-icon>account_circle</mat-icon> {{ user.firstName }} {{ user.secondName }}
+        </h2><br>
+        <p>
+            <mat-icon>call</mat-icon> {{ user.phone }}
+        </p>
+        <p>
+            <mat-icon>alternate_email</mat-icon> {{ user.mail }}
+        </p>
     </div>
 </mat-card>
 
